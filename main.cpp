@@ -204,20 +204,18 @@ int stringArray10(){
 
 
 //EXERCÍCIO 11
-void comparaPalavras(char palavra1[10], char palavra2[10], int comparar){
-      int comparar = strcmp(palavra1, palavra2);
-      if(comparar < 0){
-        cout << "A palavra " << palavra1 << " vem antes de " << palavra2 << " na ordem alfabética." <<std::endl;
-    } else if(comparar > 0){
-        cout << "A palavra " << palavra2 << " vem antes de " << palavra1 << " na ordem alfabética." <<std::endl;
+void comparaPalavras(char palavra1[10], char palavra2[10]) {
+    int comparar = strcmp(palavra1, palavra2);
+    if (comparar < 0) {
+        cout << "A palavra " << palavra1 << " vem antes de " << palavra2 << " na ordem alfabética." << endl;
+    } else if (comparar > 0) {
+        cout << "A palavra " << palavra2 << " vem antes de " << palavra1 << " na ordem alfabética." << endl;
     } else {
-        cout << "As palavras " << palavra1 << " e " << palavra2 << " são iguais" <<std::endl;
-     
+        cout << "As palavras " << palavra1 << " e " << palavra2 << " são iguais." << endl;
     }
 }
 
-int stringArray11(){
-
+int stringArray11() {
     char palavra1[10], palavra2[10];
 
     cout << "Digite uma palavra (máx 10 caracteres): ";
@@ -227,9 +225,108 @@ int stringArray11(){
     cin >> palavra2;
 
     comparaPalavras(palavra1, palavra2);
-    
+
     return 0;
 }
+
+
+//EXERCÍCIO 12
+void contaVogais(char frase[20], int vogais = 0){
+    for (int i = 0; i <= 20; i++) {
+        if(frase[i] == 'a' || frase[i] == 'e' || frase[i] == 'i' || frase[i] == 'o' || frase[i] == 'u')vogais++;
+    }
+        cout << "O número de vogais na frase é: " << vogais <<std::endl;
+    
+}
+
+int stringArray12(){
+    char frase [20];
+    int vogal = 0;
+    cout << "Digite uma frase: ";
+    cin.getline(frase, 20);
+
+    contaVogais(frase, vogal);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 13
+void primeiraLetraA(char texto[15]){
+    for(int i = 0; i <= 15; i++){
+         if(texto[i] == 'a'){
+            cout << "Está no carcatere: " << i + 1 << endl;
+            i++;
+        }
+}
+}
+
+int stringArray13(){
+    char texto[15];
+
+    cout << "Digite um texto: ";
+    cin.getline(texto, 15);
+
+    primeiraLetraA(texto);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 14
+void invertePalavra(char palavra[10 + 1]){
+    int tamanho = strlen(palavra);
+
+    cout << "Palavra invertida: ";
+
+    int i = tamanho - 1;
+
+    while (i >= 0) {
+        cout << palavra[i];
+        i--;
+    }
+}
+
+int stringArray14(){
+char palavra[10 + 1]; 
+
+    cout << "Digite uma palavra (máximo 10 caracteres): ";
+    cin >> palavra;
+
+    int tamanho = strlen(palavra);
+
+    invertePalavra(palavra);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 15
+void mudarVogal(char frase[20]){
+    for(int i = 0; i <= 20; i++){
+        if(frase[i] == 'a' || frase[i] == 'e' || frase[i] == 'i' || frase[i] == 'o' || frase[i] == 'u' ||
+            frase[i] == 'A' || frase[i] == 'E' || frase[i] == 'I' || frase[i] == 'O' || frase[i] == 'U') {
+            frase[i] = '*';
+            i++;
+            } 
+    }
+    cout << "Frase modificada: " << frase << endl;
+}
+
+int stringArray15(){
+    char frase[20];
+
+    cout << "Digite uma frase (máximo 20 caracteres): ";
+    cin >> frase;
+
+    mudarVogal(frase);
+
+    return 0;
+}
+
+
+
+
 
 
 
@@ -250,6 +347,11 @@ int main(){
     //stringArray08();
     //stringArray09();
     //stringArray10();
-    stringArray11();
+    //stringArray11();
     //stringArray12();
+    //stringArray13();
+    //stringArray14();
+    stringArray15();
+    //stringArray16();
+    //stringArray17();
 }
