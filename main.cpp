@@ -661,6 +661,131 @@ int condicionais09(){
 }
 
 
+//EXERCÍCIO 10
+void verificaSaldoBancario(double retirar){
+    double saldo = 100.00;
+    double saldoFinal = saldo - retirar;
+
+    if(saldo >= retirar){
+        cout << "Pode fazer uma retirada! O valor restante será de: " << saldo << " - " << retirar << " = " << saldoFinal <<endl;
+    } else{
+        cout << "Saldo insulficiente!" <<endl;
+    }
+
+}
+
+int condicionais10(){
+
+    double saldo, retirar, saldoFinal;
+
+    cout << "Qual quantia deseja retirar? ";
+    cin >> retirar;
+
+    verificaSaldoBancario(retirar);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 11
+void classificaLeads(int leads){
+    if(leads <= 5){
+        cout << "Quantia baixa!" <<endl;
+    } else if(leads >= 6 && leads <= 10) {
+        cout << "Quantia espereada." <<endl;
+    }else{
+        cout << "Quantia alta!" <<endl;
+    }
+}
+
+int condicionais11(){
+    int leads;
+
+    cout << "Leads recebidas: ";
+    cin >> leads;
+
+    classificaLeads(leads);
+
+    return 0;
+}
+
+ 
+//EXERCÍCIO 12
+void verificaSituacaoAcademica(double nota1, double nota2, double nota3, int presenca){
+    
+    double media = (nota1 + nota2 + nota3) /3;
+
+    if(media >= 7 && presenca == 100){
+       cout << "Aprovado. Parabéns!" <<endl;
+    } else if(media >= 7 && presenca >= 75 && presenca < 100){
+       cout << "Aprovado." <<endl;
+    } else if(media < 7 && media >= 5 && presenca > 75){
+       cout << "Recuperação!" <<endl;
+    }else if(media < 7 && media >= 5 && presenca < 75){
+       cout << "Reprovado!" <<endl;
+    }else if(media < 5 && media <= 100){
+       cout << "Reprovado!" <<endl;
+    }
+}
+
+int condicionais12(){
+
+    double nota1, nota2, nota3, media;
+    int presenca;
+
+    cout << ("Insira a 1° nota: ");
+    cin >> nota1;
+
+    cout << ("Insira a 2° nota: ");
+    cin >> nota2;
+
+    cout << ("Insira a 3° nota: ");
+    cin >> nota3;
+
+    cout << "Porcentagem de presença: ";
+    cin >> presenca;
+
+    verificaSituacaoAcademica(nota1, nota2, nota3, presenca);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 13
+void calculaRecuperacao(double notaAtual, double notaRec, int presenca){
+    double notaAprovacao = notaRec + notaAtual;
+
+    if(notaAprovacao >= 10 && presenca >= 75){
+        cout << "Aprovado!" <<endl;
+    } else if(notaAprovacao < 10) {
+        cout << "Reprovado!" <<endl;
+    } else {
+        cout << "Reprovado!" <<endl;
+    }
+}
+
+int condicionais13(){
+
+    double notaAtual, notaAprovacao, notaRec;
+    int presenca;
+
+    cout << "Insira a nota final do aluno: ";
+    cin >> notaAtual;
+
+    cout << "Insira a nota do aluno na recuperação: ";
+    cin >> notaRec;
+
+    cout << "Porcentagem da presença do aluno: ";
+    cin >> presenca;
+
+    calculaRecuperacao(notaAtual, notaRec, presenca);
+
+    return 0;
+}
+
+
+
+
 
 
 
@@ -687,7 +812,6 @@ int main(){
     //stringArray19();
     //stringArray20();
 
-
     //condicionais01();
     //condicionais02();
     //condicionais03();
@@ -696,9 +820,23 @@ int main(){
     //condicionais06();
     //condicionais07();
     //condicionais08();
-    condicionais09();
+    //condicionais09();
     //condicionais10();
     //condicionais11();
     //condicionais12();
     //condicionais13();
+
+    //arrayCpp01();
+    //arrayCpp02();
+    //arrayCpp03();
+    //arrayCpp04();
+    //arrayCpp05();
+    //arrayCpp06();
+    //arrayCpp07();
+    //arrayCpp08();
+    //arrayCpp09();
+    //arrayCpp10();
+    //arrayCpp11();
+    //arrayCpp12();
+    //arrayCpp13();
 }
