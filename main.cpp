@@ -786,6 +786,85 @@ int condicionais13(){
 
 
 
+//      EXERCÍCIOS STRINGS & ARRAYS      //
+
+
+//EXERCÍCIO 01
+void declaraImprimeArrayFor(int array[]){
+    for(int i = 0; i < 5; i++){
+        cout << array[i] <<std::endl;
+    }
+}
+
+int arrayCpp01(){
+    int array[5] = {1, 2, 3, 4, 5};
+
+    declaraImprimeArrayFor(array);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 02
+void declaracaoImpressaoWhile(char array[]){
+    for(int i = 0; i < 6; i++){
+        cout << array[i] <<std::endl;
+    }
+}
+
+int arrayCpp02(){
+    char array[6] = {'e', 'l', 'i', 's', 'a', '!'};
+    declaracaoImpressaoWhile(array);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 03
+void imprimeParArray(int array[]){
+    for(int i = 1; i < 7; i++){
+        cout << array[i] <<std::endl;
+        i++;
+    }
+}
+
+int arrayCpp03(){
+    int array[7] = {1, 2, 3, 4, 5, 6, 7};
+    imprimeParArray(array);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 04
+void imprimeMaiorCinco(float array[], int i = 0){
+    while (array[i] < 5)
+    {
+       if(array[i] < 5){
+        i++;
+       }
+        cout << array[i] << endl;
+       }
+    }
+
+
+int arrayCpp04(){
+    float array[8] = {1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5};
+    int i = 0;
+    imprimeMaiorCinco(array, i);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -829,7 +908,7 @@ int main(){
     //arrayCpp01();
     //arrayCpp02();
     //arrayCpp03();
-    //arrayCpp04();
+    arrayCpp04();
     //arrayCpp05();
     //arrayCpp06();
     //arrayCpp07();
