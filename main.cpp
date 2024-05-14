@@ -787,7 +787,7 @@ int condicionais13(){
 
 
 
-//      EXERCÍCIOS STRINGS & ARRAYS      //
+//      EXERCÍCIOS LOOPS & ARRAYS EM C++      //
 
 
 //EXERCÍCIO 01
