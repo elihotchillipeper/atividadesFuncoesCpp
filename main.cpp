@@ -2,6 +2,7 @@
 #include <string>
 #include <cstring>
 #include <algorithm>
+#include <climits>
 using namespace std;
 
 
@@ -837,31 +838,200 @@ int arrayCpp03(){
 
 
 //EXERCÍCIO 04
-void imprimeMaiorCinco(float array[], int i = 0){
-    while (array[i] < 5)
+void imprimeMaiorCinco(float array[], int size, int i = 0){
+    while (i < size && array[i] < 5)
     {
-       if(array[i] < 5){
         i++;
        }
+    while (i < size) {
         cout << array[i] << endl;
-       }
+        i++;
     }
+}
 
 
 int arrayCpp04(){
     float array[8] = {1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5};
-    int i = 0;
-    imprimeMaiorCinco(array, i);
+    int size = sizeof(array) / sizeof(array[0]);
+    imprimeMaiorCinco(array, size);
 
     return 0;
 }
 
 
+//EXETRCÍCIO 05
+void impressaoValoresAtribuidos(int array[]){
+    for(int i = 0; i < 10; i++){
+        cout << array[i] <<endl;
+    }
+}
+
+int arrayCpp05(){
+    int array[10];
+
+    cout << "Digite 10 números inteiros para o array: ";
+    cin >> array[0] >> array[1] >> array[2] >> array[3] >> array[4] >> array[5] >> array[6] >> array[7] >> array[8] >> array[9];
+    impressaoValoresAtribuidos(array);
+
+    return 0; 
+}
 
 
+//EXERCÍCIO 06
+void imprimePropriedadeArray(char array[], int tamanho){
+    cout << tamanho << endl;
+}
+
+int arrayCpp06(){
+    char array[] = {'a', 'b', 'c', 'd', 'e'};
+    int tamanho = sizeof(array) / sizeof(array[0]);
+    imprimePropriedadeArray(array, tamanho);
+
+    return 0;
+}
 
 
+//EXERCÍCIO 07
+void elementosEspecificos(int array[]){
+    cout << array[2] <<endl;
+    cout << array[5] + array[7] <<endl;
+    cout << array[1] - array[0] <<endl;
+    if(array[3] > 6){
+    cout << array[3] <<endl;
+    }
+    if(array[0] % 2 == 0){
+        cout << array[7] <<endl;
+    }
+    if(array[3] + array[7] > 22){
+        cout << array[0] <<endl;
+    }
+}
 
+int arrayCpp07(){
+   int array[8] = {3, 7, 9, 12, 4, 6, 8, 10};
+   elementosEspecificos(array);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 08
+void calculaMediaDeDados(float array[]){
+    float soma = 0;
+    for (int i = 0; i < 10; i++) {
+        soma += array[i];
+    }
+
+    float media = soma / 10;
+    cout << "A média é: " << media <<endl;
+}
+
+int arrayCpp08(){
+    float array[10];
+
+    cout << "Digite 10 número (inteiros ou não): ";
+    cin >> array[0] >> array[1] >> array[2] >> array[3] >> array[4] >> array[5] >> array[6] >> array[7] >> array[8] >> array[9];
+    calculaMediaDeDados(array);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 09
+void somaElementosArray(int array[]){
+    float soma = 0;
+    for(int i = 0; i < 10; i++){
+        soma += array[i];
+    }
+
+    cout << "A soma é: " << soma <<endl;
+} 
+
+int arrayCpp09(){
+    int array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    somaElementosArray(array);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 10
+void imprimeMultiploTresMaiorDez(int array[]){
+    for(int i = 0; i < 8; i++){
+        if(array[i] > 10 && array[i] %3 == 0){
+            cout << array[i] <<endl;
+        }
+    }
+}
+
+int arrayCpp10(){
+    int array[8] = {10, 20, 30, 40, 50, 60, 70 ,80};
+    imprimeMultiploTresMaiorDez(array);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 11
+void buscaMaxMin(int array[], int maximo, int minimo){
+    for(int i = 0; i < 12; i++){
+        if(array[i] > maximo){
+            maximo = array[i];
+        }
+
+        if(array[i] < minimo){
+            minimo = array[i];
+        }
+    }
+
+    cout << "O valor máximo do array é: " << maximo <<endl;
+    cout << "O valor mínimo do array é: " << minimo <<endl;
+}
+
+int arrayCpp11(){
+    int array[12] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13};
+    int maximo = INT_MIN;
+    int minimo = INT_MAX;
+    buscaMaxMin(array, maximo, minimo);
+
+    return 0;
+}
+
+
+//EXERCÍCIO 12
+void mediaPonderadaArray(float notas[], float pesos[]){
+    float somaPesos = 0;
+    float somaPontos = 0;
+
+    for(int i = 0; i < 5; i++){
+        somaPontos += notas[i] * pesos[i];
+        somaPesos += pesos[i];
+    }
+
+    float media_final;
+
+    if(somaPesos == 0){
+        cout << "Erro: divisão por 0!"<<endl;
+    } else {
+        media_final = somaPontos / somaPesos;
+    }
+
+    cout << "A média é: " << media_final << endl;
+}
+
+int arrayCpp12(){
+    float notas[5], pesos[5];
+
+    cout << "Digite as 5 notas: ";
+    cin >> notas[0] >> notas[1] >> notas[2] >> notas[3] >> notas[4];
+
+    cout << "Digite os 5 pesos: ";
+    cin >> pesos[0] >> pesos[1] >> pesos[2] >> pesos[3] >> pesos[4];
+
+    mediaPonderadaArray(notas, pesos);
+
+    return 0;
+}
 
 
 
@@ -908,7 +1078,7 @@ int main(){
     //arrayCpp01();
     //arrayCpp02();
     //arrayCpp03();
-    arrayCpp04();
+    //arrayCpp04();
     //arrayCpp05();
     //arrayCpp06();
     //arrayCpp07();
@@ -916,6 +1086,5 @@ int main(){
     //arrayCpp09();
     //arrayCpp10();
     //arrayCpp11();
-    //arrayCpp12();
-    //arrayCpp13();
+    arrayCpp12();
 }
